@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Button, Stack } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import AddBudgetModal from "./components/AddBudgetModal";
@@ -20,11 +21,23 @@ function App() {
     setShowAddExpenseModal(true);
     setAddExpenseModalBudgetId(budgetId);
   }
+=======
+import { Button, Container, Stack } from "react-bootstrap";
+import BudgetCard from "./components/BudgetCard";
+import AddBudgetModal from "./components/AddBudgetModal";
+import { useState } from "react";
+function App() {
+  const [showAddBudgetModal, setShowAddBudgetModal] = useState(false)
+>>>>>>> 71969b92491d7ccef662bb7f99d6029368dbb31c
 
   return (
     <>
       <Container className="my-4">
+<<<<<<< HEAD
       <Stack direction="horizontal" gap="2" className="mb-4">
+=======
+        <Stack direction="horizontal" gap="2" className="mb-4">
+>>>>>>> 71969b92491d7ccef662bb7f99d6029368dbb31c
           <h1 className="me-auto">Family Loan Fund</h1>
           <div
             style={{
@@ -35,6 +48,7 @@ function App() {
             }}
           >
             <div style={{ display: "flex", gap: "6px" }}>
+<<<<<<< HEAD
               <Button
                 variant="outline-success"
                 onClick={() => setShowAddBudgetModal(true)}
@@ -47,6 +61,12 @@ function App() {
                 onClick={openAddExpenseModal}
                 style={{ flex: 1 }}
               >
+=======
+              <Button variant="outline-success"  onClick={() => setShowAddBudgetModal(true)} style={{ flex: 1 }}>
+                Add Budget
+              </Button>
+              <Button variant="outline-success"  style={{ flex: 1 }}>
+>>>>>>> 71969b92491d7ccef662bb7f99d6029368dbb31c
                 Add Expense
               </Button>
             </div>
@@ -63,6 +83,7 @@ function App() {
             alignItems: "flex-start",
           }}
         >
+<<<<<<< HEAD
           {budgets.map((budget) => {
             const amount = getBudgetExpenses(budget.id).reduce(
               (total, expense) => total + expense.amount,
@@ -88,12 +109,21 @@ function App() {
             }
           />
           <TotalBudgetCard />
+=======
+          <BudgetCard
+            name="Entertainment"
+            gray
+            amount={200}
+            max={1000}
+          ></BudgetCard>
+>>>>>>> 71969b92491d7ccef662bb7f99d6029368dbb31c
         </div>
       </Container>
       <AddBudgetModal
         show={showAddBudgetModal}
         handleClose={() => setShowAddBudgetModal(false)}
       />
+<<<<<<< HEAD
       <AddExpenseModal
         show={showAddExpenseModal}
         defaultBudgetId={addExpenseModalBudgetId}
@@ -103,6 +133,8 @@ function App() {
         budgetId={viewExpensesModalBudgetId}
         handleClose={() => setViewExpensesModalBudgetId()}
       />
+=======
+>>>>>>> 71969b92491d7ccef662bb7f99d6029368dbb31c
     </>
   );
 }
